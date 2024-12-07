@@ -2,7 +2,6 @@ from airflow import DAG
 from airflow.decorators import task
 from datetime import datetime, timedelta
 
-# Definir los argumentos por defecto del DAG
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -13,9 +12,6 @@ default_args = {
     'retry_delay': timedelta(minutes=5),
 }
 
-# Definir el DAG
-# Cambiar el schedule_interval para que se ejecute cada 3 horas
-# Agregar la etiqueta "3horas"
 dag = DAG(
     'pipeline_datos_complejo',
     default_args=default_args,
@@ -60,7 +56,6 @@ def tarea8():
 def tarea9():
     print("Soy la Tarea 9")
 
-# Establecer las dependencias entre tareas
 t1 = tarea1()
 t2 = tarea2()
 t3 = tarea3()
